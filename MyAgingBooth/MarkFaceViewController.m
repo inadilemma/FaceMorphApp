@@ -288,6 +288,7 @@
         
 		IplImage *image = [self CreateIplImageFromUIImage:faceImageView.image];
 		
+        
 		// Scaling down
 		IplImage *small_image = cvCreateImage(cvSize(image->width/2,image->height/2), IPL_DEPTH_8U, 3);
 		cvPyrDown(image, small_image, CV_GAUSSIAN_5x5);

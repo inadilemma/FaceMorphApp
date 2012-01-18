@@ -1,0 +1,14 @@
+This includes:
+1. Integrating the faces in the app
+2. Processing them and creating the DB that includes their "normalized" "footprint":
+ -A. Locations of eyes and mouth - so I can match the user's face against)
+ -B. Very low-resolution BW representation (say, 30X30) - so I can compare and find the roughly "most similar face"
+3. Code that efficiently finds the 4 most similar faces according to the above  
+5. Integrating/enhancing image processing lab with the following abilities, implemented efficiently 
+ -A. direct access to the picture - get RGB value at (x,y)
+ -B. resize, reshape, BW 
+ -C. gaussian blur
+ -D. convertion to Lab color space  
+ -E. convolution with mask
+ -F. (option) other available filters  
+6. Providing the code so that I can easily try several effects, which are combinations of the above  

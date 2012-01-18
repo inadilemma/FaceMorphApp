@@ -7,7 +7,7 @@
 //
 
 #import "Photo.h"
-
+#import "ImageFilters.h"
 
 @implementation Photo
 
@@ -42,7 +42,9 @@
 
 -(void) applyFilter
 {
-    
+    [ImageFilters getRGB:faceImage xIndex:20 yIndex:30];
+    faceImage = [ImageFilters grayscaleImage:faceImage];
+                        
     [self transformImage:EFFECT1];
     [self transformImage:EFFECT2];
     [self transformImage:EFFECT3];

@@ -90,7 +90,6 @@
     imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentModalViewController:imagePickerController animated:NO];
     [imagePickerController release];   
-    
 }
 
 

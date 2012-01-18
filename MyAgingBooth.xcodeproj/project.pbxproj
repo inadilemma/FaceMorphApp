@@ -132,6 +132,7 @@
 		18DCD483145C16B700830099 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD481145C16B700830099 /* RootViewController.xib */; };
 		18DCD48C145C19BC00830099 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD48A145C19BC00830099 /* HomeViewController.m */; };
 		18DCD48D145C19BC00830099 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD48B145C19BC00830099 /* HomeViewController.xib */; };
+		18F7076E14C4668B0020663C /* ImageFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7076D14C4668B0020663C /* ImageFilters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -349,6 +350,8 @@
 		18DCD48A145C19BC00830099 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		18DCD48B145C19BC00830099 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = MyAgingBooth/HomeViewController.xib; sourceTree = "<group>"; };
 		18DCD48F145C1F8800830099 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
+		18F7076C14C4668B0020663C /* ImageFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilters.h; sourceTree = "<group>"; };
+		18F7076D14C4668B0020663C /* ImageFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilters.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -843,6 +846,8 @@
 				180FFAC614666D6C00C27048 /* InAppPurchaseManager.m */,
 				186139EC1481BF9700381BD5 /* MyActivityIndicator.h */,
 				186139ED1481BF9700381BD5 /* MyActivityIndicator.m */,
+				18F7076C14C4668B0020663C /* ImageFilters.h */,
+				18F7076D14C4668B0020663C /* ImageFilters.m */,
 			);
 			path = MyAgingBooth;
 			sourceTree = "<group>";
@@ -1080,6 +1085,7 @@
 				18B18644148ECDC200BAFC03 /* SHKOAuthView.m in Sources */,
 				18B18645148ECDC200BAFC03 /* SHKShareMenu.m in Sources */,
 				18B18646148ECDC200BAFC03 /* SHKViewControllerWrapper.m in Sources */,
+				18F7076E14C4668B0020663C /* ImageFilters.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1175,9 +1181,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kh M Alam";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kh M Alam";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kh M Alam (SR24TCB2ET)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kh M Alam (SR24TCB2ET)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1197,8 +1203,8 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E4A121D2-4CC9-44B1-8FA1-1F4381B41468";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E4A121D2-4CC9-44B1-8FA1-1F4381B41468";
+				PROVISIONING_PROFILE = "88FDCE7C-6379-4039-A011-9C3CE4D93A81";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88FDCE7C-6379-4039-A011-9C3CE4D93A81";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1207,9 +1213,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kh M Alam";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kh M Alam (SR24TCB2ET)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kh M Alam (SR24TCB2ET)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyAgingBooth/MyAgingBooth-Prefix.pch";
@@ -1229,8 +1235,8 @@
 					"-lz",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E4A121D2-4CC9-44B1-8FA1-1F4381B41468";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "88FDCE7C-6379-4039-A011-9C3CE4D93A81";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "88FDCE7C-6379-4039-A011-9C3CE4D93A81";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
