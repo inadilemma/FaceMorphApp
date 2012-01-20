@@ -11,6 +11,7 @@
 #import "HomeViewController.h"
 #import "RootViewController.h"
 #import "SHKFacebook.h"
+#import "DataManager.h"
 
 @implementation MyAgingBoothAppDelegate
 
@@ -29,8 +30,10 @@
 {
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    [DataManager createFacesDB];
     return YES;
 }
 

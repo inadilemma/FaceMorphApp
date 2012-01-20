@@ -21,12 +21,12 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "MyAgingBooth/ImageFilters.m"
-         timestampString = "348564008.262588"
+         timestampString = "348735800.981076"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "64"
-         endingLineNumber = "64"
-         landmarkName = "+getRGB:xIndex:yIndex:"
+         startingLineNumber = "108"
+         endingLineNumber = "108"
+         landmarkName = "+simpleBlurWithUIImage:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

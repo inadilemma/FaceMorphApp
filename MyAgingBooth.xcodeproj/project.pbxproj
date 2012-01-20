@@ -26,7 +26,6 @@
 		182C335F14643AD10098A6F7 /* FinalFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C335D14643AD10098A6F7 /* FinalFaceViewController.m */; };
 		182C336014643AD10098A6F7 /* FinalFaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182C335E14643AD10098A6F7 /* FinalFaceViewController.xib */; };
 		186139EE1481BF9800381BD5 /* MyActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 186139ED1481BF9700381BD5 /* MyActivityIndicator.m */; };
-		186139F01481CD4100381BD5 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 186139EF1481CD3F00381BD5 /* Entitlements.plist */; };
 		18A174B8145ECD590086DB15 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A174B7145ECD590086DB15 /* Photo.m */; };
 		18A174BD145ED30E0086DB15 /* MarkFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A174BB145ED30D0086DB15 /* MarkFaceViewController.m */; };
 		18A174BE145ED30E0086DB15 /* MarkFaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A174BC145ED30E0086DB15 /* MarkFaceViewController.xib */; };
@@ -133,6 +132,9 @@
 		18DCD48C145C19BC00830099 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD48A145C19BC00830099 /* HomeViewController.m */; };
 		18DCD48D145C19BC00830099 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD48B145C19BC00830099 /* HomeViewController.xib */; };
 		18F7076E14C4668B0020663C /* ImageFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7076D14C4668B0020663C /* ImageFilters.m */; };
+		18F7077F14C8B9670020663C /* FaceDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7077E14C8B9670020663C /* FaceDB.m */; };
+		18F7078214C8B9A20020663C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7078114C8B9A10020663C /* DataManager.m */; };
+		18F7078414C8C0270020663C /* FacesBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18F7078314C8C0270020663C /* FacesBundle.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -159,7 +161,6 @@
 		182C335E14643AD10098A6F7 /* FinalFaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinalFaceViewController.xib; path = MyAgingBooth/FinalFaceViewController.xib; sourceTree = "<group>"; };
 		186139EC1481BF9700381BD5 /* MyActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivityIndicator.h; sourceTree = "<group>"; };
 		186139ED1481BF9700381BD5 /* MyActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivityIndicator.m; sourceTree = "<group>"; };
-		186139EF1481CD3F00381BD5 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		18A174B6145ECD590086DB15 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		18A174B7145ECD590086DB15 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		18A174BA145ED30D0086DB15 /* MarkFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkFaceViewController.h; sourceTree = "<group>"; };
@@ -352,6 +353,11 @@
 		18DCD48F145C1F8800830099 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		18F7076C14C4668B0020663C /* ImageFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilters.h; sourceTree = "<group>"; };
 		18F7076D14C4668B0020663C /* ImageFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilters.m; sourceTree = "<group>"; };
+		18F7077D14C8B9670020663C /* FaceDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDB.h; sourceTree = "<group>"; };
+		18F7077E14C8B9670020663C /* FaceDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceDB.m; sourceTree = "<group>"; };
+		18F7078014C8B9A10020663C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		18F7078114C8B9A10020663C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		18F7078314C8C0270020663C /* FacesBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = FacesBundle.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -780,8 +786,8 @@
 		18DCD455145C16B600830099 = {
 			isa = PBXGroup;
 			children = (
+				18F7078314C8C0270020663C /* FacesBundle.bundle */,
 				18B18523148ECDC000BAFC03 /* ShareKit */,
-				186139EF1481CD3F00381BD5 /* Entitlements.plist */,
 				18B18510148E06AA00BAFC03 /* Default.png */,
 				18D87367147AFB6E00DC30D0 /* OpenCVlib */,
 				18D8734C147AEE7100DC30D0 /* OpenCV */,
@@ -829,6 +835,8 @@
 				18DCD47E145C16B700830099 /* RootViewController.h */,
 				18DCD47F145C16B700830099 /* RootViewController.m */,
 				18DCD478145C16B700830099 /* MyAgingBooth.xcdatamodeld */,
+				18F7077D14C8B9670020663C /* FaceDB.h */,
+				18F7077E14C8B9670020663C /* FaceDB.m */,
 				18DCD489145C19BB00830099 /* HomeViewController.h */,
 				18DCD48A145C19BC00830099 /* HomeViewController.m */,
 				18DCD48F145C1F8800830099 /* Globals.h */,
@@ -848,6 +856,8 @@
 				186139ED1481BF9700381BD5 /* MyActivityIndicator.m */,
 				18F7076C14C4668B0020663C /* ImageFilters.h */,
 				18F7076D14C4668B0020663C /* ImageFilters.m */,
+				18F7078014C8B9A10020663C /* DataManager.h */,
+				18F7078114C8B9A10020663C /* DataManager.m */,
 			);
 			path = MyAgingBooth;
 			sourceTree = "<group>";
@@ -987,7 +997,6 @@
 				18D87358147AEFE900DC30D0 /* haarcascade_profileface.xml in Resources */,
 				18D8735A147AEFFB00DC30D0 /* haarcascade_frontalface_alt_tree.xml in Resources */,
 				18D8735C147AF01F00DC30D0 /* haarcascade_frontalface_default.xml in Resources */,
-				186139F01481CD4100381BD5 /* Entitlements.plist in Resources */,
 				18A1C764148404BB005C402D /* email.jpeg in Resources */,
 				18A1C765148404BB005C402D /* fb.jpeg in Resources */,
 				18A1C766148404BB005C402D /* loop.png in Resources */,
@@ -1001,6 +1010,7 @@
 				18B1860F148ECDC100BAFC03 /* SHKSharers.plist in Resources */,
 				18B18614148ECDC100BAFC03 /* Localizable.strings in Resources */,
 				18B1862D148ECDC100BAFC03 /* FBDialog.bundle in Resources */,
+				18F7078414C8C0270020663C /* FacesBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,6 +1096,8 @@
 				18B18645148ECDC200BAFC03 /* SHKShareMenu.m in Sources */,
 				18B18646148ECDC200BAFC03 /* SHKViewControllerWrapper.m in Sources */,
 				18F7076E14C4668B0020663C /* ImageFilters.m in Sources */,
+				18F7077F14C8B9670020663C /* FaceDB.m in Sources */,
+				18F7078214C8B9A20020663C /* DataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

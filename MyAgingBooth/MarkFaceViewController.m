@@ -91,7 +91,7 @@
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     
-    [faceImageView.image release];
+   // [faceImageView.image release];
     [faceImageView release];
     
     [leftEyeView release];
@@ -183,7 +183,7 @@
 }
 
 #pragma mark -
-#pragma mark Utilities for intarnal use
+#pragma mark Utilities for internal use
 
 - (void)showProgressIndicator:(NSString *)text {
 	//[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -464,18 +464,4 @@
 
 
 
-
-/*
-+(UIImage*) drawImage:(UIImage*) fgImage
-              inImage:(UIImage*) bgImage
-              inPoint:(CGPoint)  point
-{
-    UIGraphicsBeginImageContextWithOptions(bgImage.size, FALSE, 0.0);
-    [bgImage drawInRect:CGRectMake( 0, 0, bgImage.size.width, bgImage.size.height)];
-    [fgImage drawInRect:CGRectMake( point.x, point.y, fgImage.size.width, fgImage.size.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}*/
 @end

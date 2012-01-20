@@ -9,6 +9,8 @@
 #import "EffectSelectionViewController.h"
 #import "FinalFaceViewController.h"
 #import "Globals.h"
+#import "ImageFilters.h"
+
 
 @implementation EffectSelectionViewController
 @synthesize effect1,effect2,effect3,effect4,facePhoto;
@@ -55,6 +57,8 @@
     [self.effect2 setImage:facePhoto.faceImage forState:UIControlStateSelected];
     [self.effect2 addTarget:self action:@selector(effectSelected:) forControlEvents:UIControlEventTouchUpInside];
 
+    facePhoto.faceImage=[ImageFilters gaussianBlurWithUIImage:facePhoto.faceImage];
+    
     [self.effect3 setImage:facePhoto.faceImage forState:UIControlStateNormal];
     [self.effect3 setImage:facePhoto.faceImage forState:UIControlStateSelected];
     [self.effect3 addTarget:self action:@selector(effectSelected:) forControlEvents:UIControlEventTouchUpInside];

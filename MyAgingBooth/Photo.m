@@ -42,8 +42,10 @@
 
 -(void) applyFilter
 {
-    [ImageFilters getRGB:faceImage xIndex:20 yIndex:30];
-    faceImage = [ImageFilters grayscaleImage:faceImage];
+    faceImage = [ImageFilters gaussianBlurWithUIImage:faceImage param1:12 param2:12 param3:0 param4:0];
+    
+    //[ImageFilters getRGB:faceImage xIndex:20 yIndex:30];
+    //faceImage = [ImageFilters grayscaleImage:faceImage];
                         
     [self transformImage:EFFECT1];
     [self transformImage:EFFECT2];
