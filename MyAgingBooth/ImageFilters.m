@@ -7,7 +7,7 @@
 //
 
 #import "ImageFilters.h"
-
+#import "Globals.h"
 @implementation ImageFilters
 
 + (UIImage *) grayscaleImage: (UIImage *) image 
@@ -190,7 +190,34 @@
 {
     IplImage *src= [self CreateIplImageFromUIImage:image];
     cvCvtColor(src, src, CV_RGB2Lab);
+    
     return [self UIImageFromIplImage:src];
+}
+
+
+//mask type AND,OR,XOR
++ (UIImage *) applyMask: (UIImage *) imageSrc scalerMask:(int) scalerMask maskType: (int) maskType
+{
+    IplImage *src= [self CreateIplImageFromUIImage:imageSrc];
+
+    if (maskType == AND) {
+        cvAndS(src, cvRealScalar(*(float*)&scalerMask ) , src, 0);
+    }
+    else if(maskType == OR)
+    {
+        cvOrS(src, cvRealScalar(*(float*)&scalerMask ) , src, 0);
+
+    }
+    else if (maskType == XOR)
+    {
+        cvXorS(src, cvRealScalar(*(float*)&scalerMask ) , src, 0);
+
+    }
+    
+    UIImage* ret=[self UIImageFromIplImage:src];
+    
+    cvReleaseImage(&src);
+    return ret;
 }
 
 

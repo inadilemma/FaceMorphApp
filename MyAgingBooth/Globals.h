@@ -71,3 +71,12 @@ typedef enum
     EFFECT3,
     EFFECT4
 }EffectType;
+
+
+typedef enum
+{
+AND, OR, XOR
+    
+}MaskType;
+
+
