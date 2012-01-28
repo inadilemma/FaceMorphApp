@@ -123,22 +123,35 @@
     facePhoto.rightEyeLocation=rightEyeView.center;
     facePhoto.mouthLocation=mouthView.center;
     
-   // now generate the the transformed image by applying filters
-    [facePhoto applyFilter];
     //show some indicator for the time required for applying the filter
-    //    ...........
+    //    ...........    
+    [self showProgressIndicator:@"Finding matches"];
+   // now generate the the transformed image by applying filters
+    [self performSelectorInBackground:@selector(applyFilter) withObject:nil];
+
+
     
     
-    //move to the effect selection screen once the 
-    EffectSelectionViewController *effectSelectionViewController=[[EffectSelectionViewController alloc] initWithNibName:@"EffectSelectionViewController" bundle:nil];
+
     
     //assign the Photo with applied filters to the selection view photo holder
     
-    effectSelectionViewController.facePhoto=facePhoto;
-    [self.navigationController pushViewController:effectSelectionViewController animated:YES];
-    [effectSelectionViewController release];
+
     
 
+}
+
+-(void) applyFilter
+{
+
+    [facePhoto applyFilter];
+
+    [self hideProgressIndicator];
+    //move to the effect selection screen once the 
+    EffectSelectionViewController *effectSelectionViewController=[[EffectSelectionViewController alloc] initWithNibName:@"EffectSelectionViewController" bundle:nil];    
+    effectSelectionViewController.facePhoto=facePhoto;
+    [self.navigationController pushViewController:effectSelectionViewController animated:YES];
+    [effectSelectionViewController release];    
 }
 
 #pragma mark -

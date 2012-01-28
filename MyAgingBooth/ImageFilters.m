@@ -186,6 +186,14 @@
 }
 
 
++ (UIImage *) toLABColorSpace: (UIImage *) image
+{
+    IplImage *src= [self CreateIplImageFromUIImage:image];
+    cvCvtColor(src, src, CV_RGB2Lab);
+    return [self UIImageFromIplImage:src];
+}
+
+
 @end
 
 //+ (UIImage *) gaussianBlur: (UIImage *) image

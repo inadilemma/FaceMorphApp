@@ -8,6 +8,7 @@
 
 #import "Photo.h"
 #import "ImageFilters.h"
+#import "DataManager.h"
 
 @implementation Photo
 
@@ -42,15 +43,24 @@
 
 -(void) applyFilter
 {
-    faceImage = [ImageFilters gaussianBlurWithUIImage:faceImage param1:12 param2:12 param3:0 param4:0];
-    
+    //faceImage = [ImageFilters gaussianBlurWithUIImage:faceImage param1:10 param2:10 param3:0 param4:0];
+    NSArray *fourMatches=[[DataManager findFourBestMatch:faceImage] retain];
     //[ImageFilters getRGB:faceImage xIndex:20 yIndex:30];
     //faceImage = [ImageFilters grayscaleImage:faceImage];
-                        
-    [self transformImage:EFFECT1];
+    
+    imageAfterEffect1 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:0]];
+    imageAfterEffect2 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:1]];
+    imageAfterEffect3 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:2]];
+    imageAfterEffect4 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:3]];    
+    
+    //imageAfterEffect2= [ImageFilters grayscaleImage:imageAfterEffect2];
+    //imageAfterEffect1= [ImageFilters gaussianBlurWithUIImage:imageAfterEffect1 param1:17 param2:17 param3:0 param4:0];
+    
+    [fourMatches release];
+  /*  [self transformImage:EFFECT1];
     [self transformImage:EFFECT2];
     [self transformImage:EFFECT3];
-    [self transformImage:EFFECT4];
+    [self transformImage:EFFECT4];*/
 }
 
 //do the actual transformation on the face image when called with the appropriate filer number

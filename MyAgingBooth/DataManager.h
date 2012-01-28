@@ -16,6 +16,7 @@
 
 +(void) createFacesDB;
 +(NSUInteger) countFaces;
++(NSArray*) findFourBestMatch: (UIImage*) faceImage;
 
 
 @end

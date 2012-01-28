@@ -12,3 +12,6 @@ This includes:
  -E. convolution with mask
  -F. (option) other available filters  
 6. Providing the code so that I can easily try several effects, which are combinations of the above  
+
+
+for f in *.jpg; do echo $f; convert "$f" -resize 64x64 "$(echo $(echo 'temp/resized_' )""$f)"; done

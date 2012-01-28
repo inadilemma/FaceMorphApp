@@ -49,22 +49,22 @@
     
     //set the images
    
-    [self.effect1 setImage:facePhoto.faceImage forState:UIControlStateNormal];
-    [self.effect1 setImage:facePhoto.faceImage forState:UIControlStateSelected];
+    [self.effect1 setImage:facePhoto.imageAfterEffect1 forState:UIControlStateNormal];
+    [self.effect1 setImage:facePhoto.imageAfterEffect1 forState:UIControlStateSelected];
     [self.effect1 addTarget:self action:@selector(effectSelected:) forControlEvents:UIControlEventTouchUpInside];
 
-    [self.effect2 setImage:facePhoto.faceImage forState:UIControlStateNormal];
-    [self.effect2 setImage:facePhoto.faceImage forState:UIControlStateSelected];
+    [self.effect2 setImage:facePhoto.imageAfterEffect2 forState:UIControlStateNormal];
+    [self.effect2 setImage:facePhoto.imageAfterEffect2 forState:UIControlStateSelected];
     [self.effect2 addTarget:self action:@selector(effectSelected:) forControlEvents:UIControlEventTouchUpInside];
 
-    facePhoto.faceImage=[ImageFilters gaussianBlurWithUIImage:facePhoto.faceImage];
+    //facePhoto.faceImage=[ImageFilters gaussianBlurWithUIImage:facePhoto.faceImage];
     
-    [self.effect3 setImage:facePhoto.faceImage forState:UIControlStateNormal];
-    [self.effect3 setImage:facePhoto.faceImage forState:UIControlStateSelected];
+    [self.effect3 setImage:facePhoto.imageAfterEffect3 forState:UIControlStateNormal];
+    [self.effect3 setImage:facePhoto.imageAfterEffect3 forState:UIControlStateSelected];
     [self.effect3 addTarget:self action:@selector(effectSelected:) forControlEvents:UIControlEventTouchUpInside];
 
-    [self.effect4 setImage:facePhoto.faceImage forState:UIControlStateNormal];
-    [self.effect4 setImage:facePhoto.faceImage forState:UIControlStateSelected];
+    [self.effect4 setImage:facePhoto.imageAfterEffect4 forState:UIControlStateNormal];
+    [self.effect4 setImage:facePhoto.imageAfterEffect4 forState:UIControlStateSelected];
     [self.effect4 addTarget:self action:@selector(effectSelected:) forControlEvents:UIControlEventTouchUpInside];
 
 }
