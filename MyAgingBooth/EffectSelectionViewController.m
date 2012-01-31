@@ -90,10 +90,7 @@
     [self.effect3 release];
     [self.effect4 release];
     
-    self.effect1=nil;
-    self.effect2=nil;
-    self.effect3=nil;
-    self.effect4=nil;
+
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

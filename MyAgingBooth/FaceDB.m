@@ -2,7 +2,7 @@
 //  FaceDB.m
 //  MyAgingBooth
 //
-//  Created by Apple on 20/01/12.
+//  Created by Apple on 31/01/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -12,9 +12,10 @@
 @implementation FaceDB
 
 @dynamic faceID;
-@dynamic leftEye;
 @dynamic rightEye;
 @dynamic mouth;
+@dynamic leftEye;
 @dynamic thumbnail;
+@dynamic originalImage;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "ImageFilters.h"
 #import "Globals.h"
+#import "UIImage+DSP.h"
+
 @implementation ImageFilters
 
 + (UIImage *) grayscaleImage: (UIImage *) image 
@@ -99,6 +101,7 @@
  */
 
 //Gaussian blur
+/*
 + (UIImage *)gaussianBlurWithUIImage:(UIImage *)anImage param1:(int) param1 param2:(int) param2  param3:(int) param3 param4:(int) param4 {
     
     // Create an IplImage from UIImage
@@ -135,7 +138,7 @@
     cvReleaseImage(&img_color);
     
     //make the Blur
-    cvSmooth(img, img, CV_BLUR, 7, 7, 0, 0);
+    cvSmooth(img, img, CV_BLUR, 17, 17, 0, 0);
     
     //return the resulting image
     UIImage *retUIImage = [self UIImageFromIplImage:img];
@@ -145,7 +148,7 @@
     
     return retUIImage;
 }
-
+*/
 
 // NOTE you SHOULD cvReleaseImage() for the return value when end of the code.
 + (IplImage *)CreateIplImageFromUIImage:(UIImage *)image {
@@ -220,10 +223,40 @@
     return ret;
 }
 
+//use only odd valued kernel size
+
++ (UIImage *) gaussianBlur: (UIImage *) image kernelSize:(int) ksize sigmaSq:(float) sigmaSq
+{
+    return [image imageByApplyingGaussianBlurOfSize:ksize withSigmaSquared:sigmaSq];
+}
+
+
++ (UIImage *) boxBlur3x3: (UIImage *) image 
+{
+    return [image imageByApplyingBoxBlur3x3];
+}
+
++ (UIImage *) motionBlur5x5: (UIImage *) image 
+{
+    return [image imageByApplyingDiagonalMotionBlur5x5] ;
+}
+
+
++ (UIImage *) motionBlur7x7 : (UIImage *) image 
+{
+    return [image imageByApplyingDiagonalMotionBlur7x7] ;
+}
+
++ (UIImage *) embossImage : (UIImage *) image 
+{
+    return [image imageByApplyingEmboss3x3 ] ;
+}
+
++ (UIImage *)  sharpenImage : (UIImage *) image 
+{
+    return [image imageByApplyingSharpen3x3 ] ;
+}
+
 
 @end
 
-//+ (UIImage *) gaussianBlur: (UIImage *) image
-//{
-    
-//}

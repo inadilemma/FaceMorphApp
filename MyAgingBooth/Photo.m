@@ -44,12 +44,13 @@
 -(void) applyFilter
 {
     //faceImage = [ImageFilters gaussianBlurWithUIImage:faceImage param1:10 param2:10 param3:0 param4:0];
-    NSArray *fourMatches=[[DataManager findFourBestMatch:faceImage] retain];
+    NSArray *fourMatches=[DataManager findFourBestMatch:faceImage];
     //[ImageFilters getRGB:faceImage xIndex:20 yIndex:30];
     //faceImage = [ImageFilters grayscaleImage:faceImage];
     
-    imageAfterEffect1 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:0]];
-    imageAfterEffect2 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:1]];
+    imageAfterEffect1 =  [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:0]];
+    
+    imageAfterEffect2 = [ImageFilters embossImage:imageAfterEffect1];
     imageAfterEffect3 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:2]];
     imageAfterEffect4 = [UIImage imageNamed:(NSString*) [fourMatches objectAtIndex:3]];    
     

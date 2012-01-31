@@ -95,13 +95,13 @@
     [faceImageView release];
     
     [leftEyeView release];
-    self.leftEyeView=nil;
+   // self.leftEyeView=nil;
     
     [self.rightEyeView release];
-    self.rightEyeView=nil;
+    //self.rightEyeView=nil;
     
     [self.mouthView release];
-    self.mouthView=nil;
+    //self.mouthView=nil;
     
     
 }

@@ -25,6 +25,8 @@
 		1814905A146C223F006A49F9 /* mouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 18149057146C223F006A49F9 /* mouth.png */; };
 		182C335F14643AD10098A6F7 /* FinalFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 182C335D14643AD10098A6F7 /* FinalFaceViewController.m */; };
 		182C336014643AD10098A6F7 /* FinalFaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 182C335E14643AD10098A6F7 /* FinalFaceViewController.xib */; };
+		18301E8514D7E9B90017B548 /* UIImage+DSP.m in Sources */ = {isa = PBXBuildFile; fileRef = 18301E8414D7E9B80017B548 /* UIImage+DSP.m */; };
+		18301E8F14D7F2D60017B548 /* FaceDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18301E8E14D7F2D50017B548 /* FaceDB.m */; };
 		186139EE1481BF9800381BD5 /* MyActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 186139ED1481BF9700381BD5 /* MyActivityIndicator.m */; };
 		18A174B8145ECD590086DB15 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A174B7145ECD590086DB15 /* Photo.m */; };
 		18A174BD145ED30E0086DB15 /* MarkFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A174BB145ED30D0086DB15 /* MarkFaceViewController.m */; };
@@ -132,7 +134,6 @@
 		18DCD48C145C19BC00830099 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DCD48A145C19BC00830099 /* HomeViewController.m */; };
 		18DCD48D145C19BC00830099 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18DCD48B145C19BC00830099 /* HomeViewController.xib */; };
 		18F7076E14C4668B0020663C /* ImageFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7076D14C4668B0020663C /* ImageFilters.m */; };
-		18F7077F14C8B9670020663C /* FaceDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7077E14C8B9670020663C /* FaceDB.m */; };
 		18F7078214C8B9A20020663C /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F7078114C8B9A10020663C /* DataManager.m */; };
 		18F7078414C8C0270020663C /* FacesBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18F7078314C8C0270020663C /* FacesBundle.bundle */; };
 /* End PBXBuildFile section */
@@ -159,6 +160,10 @@
 		182C335C14643AD10098A6F7 /* FinalFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinalFaceViewController.h; sourceTree = "<group>"; };
 		182C335D14643AD10098A6F7 /* FinalFaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinalFaceViewController.m; sourceTree = "<group>"; };
 		182C335E14643AD10098A6F7 /* FinalFaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinalFaceViewController.xib; path = MyAgingBooth/FinalFaceViewController.xib; sourceTree = "<group>"; };
+		18301E8314D7E9B80017B548 /* UIImage+DSP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DSP.h"; sourceTree = "<group>"; };
+		18301E8414D7E9B80017B548 /* UIImage+DSP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DSP.m"; sourceTree = "<group>"; };
+		18301E8D14D7F2D40017B548 /* FaceDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDB.h; sourceTree = "<group>"; };
+		18301E8E14D7F2D50017B548 /* FaceDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceDB.m; sourceTree = "<group>"; };
 		186139EC1481BF9700381BD5 /* MyActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivityIndicator.h; sourceTree = "<group>"; };
 		186139ED1481BF9700381BD5 /* MyActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivityIndicator.m; sourceTree = "<group>"; };
 		18A174B6145ECD590086DB15 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
@@ -353,8 +358,6 @@
 		18DCD48F145C1F8800830099 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		18F7076C14C4668B0020663C /* ImageFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFilters.h; sourceTree = "<group>"; };
 		18F7076D14C4668B0020663C /* ImageFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFilters.m; sourceTree = "<group>"; };
-		18F7077D14C8B9670020663C /* FaceDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceDB.h; sourceTree = "<group>"; };
-		18F7077E14C8B9670020663C /* FaceDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceDB.m; sourceTree = "<group>"; };
 		18F7078014C8B9A10020663C /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		18F7078114C8B9A10020663C /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		18F7078314C8C0270020663C /* FacesBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = FacesBundle.bundle; sourceTree = "<group>"; };
@@ -828,6 +831,8 @@
 		18DCD46C145C16B700830099 /* MyAgingBooth */ = {
 			isa = PBXGroup;
 			children = (
+				18301E8314D7E9B80017B548 /* UIImage+DSP.h */,
+				18301E8414D7E9B80017B548 /* UIImage+DSP.m */,
 				18B18505148DEFD000BAFC03 /* MagnifierView.h */,
 				18B18506148DEFD000BAFC03 /* MagnifierView.m */,
 				18DCD475145C16B700830099 /* MyAgingBoothAppDelegate.h */,
@@ -835,8 +840,8 @@
 				18DCD47E145C16B700830099 /* RootViewController.h */,
 				18DCD47F145C16B700830099 /* RootViewController.m */,
 				18DCD478145C16B700830099 /* MyAgingBooth.xcdatamodeld */,
-				18F7077D14C8B9670020663C /* FaceDB.h */,
-				18F7077E14C8B9670020663C /* FaceDB.m */,
+				18301E8D14D7F2D40017B548 /* FaceDB.h */,
+				18301E8E14D7F2D50017B548 /* FaceDB.m */,
 				18DCD489145C19BB00830099 /* HomeViewController.h */,
 				18DCD48A145C19BC00830099 /* HomeViewController.m */,
 				18DCD48F145C1F8800830099 /* Globals.h */,
@@ -1096,8 +1101,9 @@
 				18B18645148ECDC200BAFC03 /* SHKShareMenu.m in Sources */,
 				18B18646148ECDC200BAFC03 /* SHKViewControllerWrapper.m in Sources */,
 				18F7076E14C4668B0020663C /* ImageFilters.m in Sources */,
-				18F7077F14C8B9670020663C /* FaceDB.m in Sources */,
 				18F7078214C8B9A20020663C /* DataManager.m in Sources */,
+				18301E8514D7E9B90017B548 /* UIImage+DSP.m in Sources */,
+				18301E8F14D7F2D60017B548 /* FaceDB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

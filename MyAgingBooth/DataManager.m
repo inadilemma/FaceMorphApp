@@ -12,6 +12,7 @@
 #import "opencv2/objdetect/objdetect.hpp"
 #import "opencv2/imgproc/imgproc_c.h"
 #import "ImageFilters.h"
+#import "MyActivityIndicator.h"
 
 @implementation DataManager
 
@@ -21,6 +22,8 @@
 
 +(void) createFacesDB
 {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+
     if ([self countFaces]==0) {
         
         
@@ -44,19 +47,23 @@
             FaceDB *facedata = [NSEntityDescription
                                 insertNewObjectForEntityForName:@"FaceDB"
                                 inManagedObjectContext:context];
-            facedata.faceID= [NSNumber numberWithInt:   i++];
-            facedata.leftEye=[NSNumber numberWithInt: 100];
-            facedata.rightEye=[NSNumber numberWithInt: 100];
-            facedata.mouth=[NSNumber numberWithInt: 100];
+            facedata.faceID= [NSNumber numberWithInt: i++];
+            facedata.leftEye=[NSNumber numberWithInt: 0];
+            facedata.rightEye=[NSNumber numberWithInt: 0];
+            facedata.mouth= [NSNumber numberWithInt: 0];
             NSString *teststr=[imageName substringFromIndex: [imageName rangeOfString:@"FacesBundle.bundle"].location];
-            facedata.thumbnail=teststr;
+            facedata.originalImage=teststr;
+            NSString *sample= [teststr stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/" withString:@"FacesBundle.bundle/sample/resized_"];
+            facedata.thumbnail=sample;
         }
         
         NSError *error = nil;
         if (![context save:&error]) {
             NSLog(@"error %@", error);
         }
+            [[MyActivityIndicator currentIndicator] hide];
     }
+    [pool drain];
 }
 
 +(NSUInteger) countFaces
@@ -82,6 +89,7 @@
 
 +(NSArray*) findFourBestMatch: (UIImage*) faceImage
 {
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     NSArray *bestMatches=nil;
     NSManagedObjectContext *context = [(MyAgingBoothAppDelegate*)[[UIApplication sharedApplication] delegate] managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -107,12 +115,13 @@
         
         for (FaceDB* facedb in fetchedObjects) 
         {
-            NSLog(@"M: %@", facedb.thumbnail);
-            NSString *sample= [facedb.thumbnail stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/" withString:@"FacesBundle.bundle/sample/resized_"];
-            NSLog(@"L: %@", sample);
+           // NSLog(@"M: %@", facedb.thumbnail);
+          //  NSString *sample= [facedb.thumbnail stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/" withString:@"FacesBundle.bundle/sample/resized_"];
+           // NSLog(@"L: %@", sample);
  
-            IplImage *dest= [ImageFilters CreateIplImageFromUIImage:[UIImage imageNamed:sample]];
+            IplImage *dest= [ImageFilters CreateIplImageFromUIImage:[UIImage imageNamed:facedb.thumbnail]];
             float matchScore=cvNorm(source, dest, CV_L2,NULL);
+            NSLog(@"L: %f", matchScore);
             cvReleaseImage(&dest);
             cvReleaseImage(&source);
             
@@ -120,35 +129,36 @@
                 match4=match3; matchScore4=matchScore3;
                 match3=match2; matchScore3=matchScore2;
                 match2=match1; matchScore2=matchScore1;
-                match1=sample; matchScore1=matchScore;
+                match1=facedb.originalImage; matchScore1=matchScore;
             }
             else if(matchScore <=matchScore2)
             {
                 match4=match3; matchScore4=matchScore3;
                 match3=match2; matchScore3=matchScore2;
-                match2=sample; matchScore2=matchScore;                
+                match2=facedb.originalImage; matchScore2=matchScore;                
             }
             else if(matchScore <=matchScore3)
             {
                 match4=match3; matchScore4=matchScore3;
-                match3=sample; matchScore3=matchScore;
+                match3=facedb.originalImage; matchScore3=matchScore;
             }
             else if(matchScore <=matchScore4)
             {
-                match4=sample; matchScore4=matchScore;                
+                match4=facedb.originalImage; matchScore4=matchScore;                
             }
         }
       
-         match1 = [match1 stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/sample/resized_" withString:@"FacesBundle.bundle/"];
+       /*  match1 = [match1 stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/sample/resized_" withString:@"FacesBundle.bundle/"];
          match2 = [match2 stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/sample/resized_" withString:@"FacesBundle.bundle/"];
          match3 = [match3 stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/sample/resized_" withString:@"FacesBundle.bundle/"];
-         match4 = [match4 stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/sample/resized_" withString:@"FacesBundle.bundle/"];
+         match4 = [match4 stringByReplacingOccurrencesOfString:@"FacesBundle.bundle/sample/resized_" withString:@"FacesBundle.bundle/"];*/
         
 
-        bestMatches = [[[NSArray alloc] initWithObjects:[[NSString alloc] initWithString:match1],[[NSString alloc] initWithString :match2],[[NSString alloc] initWithString: match3],[[NSString alloc] initWithString: match4], nil] autorelease];
+        bestMatches = [[NSArray alloc] initWithObjects:[[NSString alloc] initWithString:match1],[[NSString alloc] initWithString :match2],[[NSString alloc] initWithString: match3],[[NSString alloc] initWithString: match4], nil];
       
     }
-        [fetchRequest release];        
+        [fetchRequest release]; 
+    [pool drain];
     return bestMatches;
 }
 

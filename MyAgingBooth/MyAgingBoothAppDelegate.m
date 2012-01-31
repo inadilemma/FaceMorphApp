@@ -12,6 +12,7 @@
 #import "RootViewController.h"
 #import "SHKFacebook.h"
 #import "DataManager.h"
+#import "MyActivityIndicator.h"
 
 @implementation MyAgingBoothAppDelegate
 
@@ -33,8 +34,18 @@
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
-    [DataManager createFacesDB];
+    if([DataManager countFaces] ==0)
+    {
+    [[MyActivityIndicator currentIndicator] displayActivity:@"Initializing Database ..."];
+    [self performSelectorInBackground:@selector(InitilizeDB) withObject:nil];
+
+    }
     return YES;
+}
+
+- (void) InitilizeDB
+{
+        [DataManager createFacesDB];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

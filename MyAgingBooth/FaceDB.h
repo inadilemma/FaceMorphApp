@@ -2,7 +2,7 @@
 //  FaceDB.h
 //  MyAgingBooth
 //
-//  Created by Apple on 20/01/12.
+//  Created by Apple on 31/01/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,9 +13,10 @@
 @interface FaceDB : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * faceID;
-@property (nonatomic, retain) NSNumber * leftEye;
 @property (nonatomic, retain) NSNumber * rightEye;
 @property (nonatomic, retain) NSNumber * mouth;
+@property (nonatomic, retain) NSNumber * leftEye;
 @property (nonatomic, retain) NSString * thumbnail;
+@property (nonatomic, retain) NSString * originalImage;
 
 @end
